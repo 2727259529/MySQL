@@ -37,16 +37,18 @@ SQL：结构化查询语言。
 - 其他类型
 -----
 ## MYSQL常用命令
-- 退出：mysql：			 exit;
-- 查看mysql中有哪些数据库：show databases;
-- 选择要使用的数据库：     use 库名;
-- 创建数据库：			 create database 库名;
-- 查看数据库下有哪些表：   show tables;
-- 查询数据库的版本号：     select version();
-- 查询当前在哪个数据库：   select database();
-- 终止mysql的命令：		 \c
-- 查询表中数据： 			 select \* from 表名
-- 查看表结构：		  	 desc 表名
+|A|B|
+|:----|:----|
+|退出mysql：			 |exit;|
+| 查看mysql中有哪些数据库：|show databases;|
+| 选择要使用的数据库：   |  use 库名;|
+| 创建数据库：			 create database 库名;|
+|查看数据库下有哪些表： |  show tables;|
+|查询数据库的版本号：    | select version();|
+|查询当前在哪个数据库：|   select database();|
+| 终止mysql的命令：		 |\c|
+| 查询表中数据： 			| select \* from 表名|
+| 查看表结构：		  	 |desc 表名|
 	
 -----
 ## SQL语句分类
