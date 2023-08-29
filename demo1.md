@@ -42,7 +42,7 @@ SQL：结构化查询语言。
 |退出mysql：			 |exit;|
 | 查看mysql中有哪些数据库：|show databases;|
 | 选择要使用的数据库：   |  use 库名;|
-| 创建数据库：			 create database 库名;|
+| 创建数据库：			| create database 库名;|
 |查看数据库下有哪些表： |  show tables;|
 |查询数据库的版本号：    | select version();|
 |查询当前在哪个数据库：|   select database();|
@@ -58,4 +58,7 @@ SQL：结构化查询语言。
 	TCL：事务控制语言（commit，rollback）
 	DCL：数据控制语言（grand，revoke）
 -----
- 
+ ## 简单查询
+ |:----|:----|
+ |查询字段|select 字段名（多个字段用逗号隔开） from 表名|
+ |dwfwegaeh|brawetsryj|
