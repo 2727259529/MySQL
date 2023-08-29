@@ -28,31 +28,32 @@ SQL：结构化查询语言。
 ```grant all privileges on database_name.* to user_name;```
 ### 撤销授权
 ```revoke all privileges on database_name.* from user_name;```
-----
+-----
 ## MYSQl的数据类型
-	- 整形类型：int，bigint
-	- 浮点类型：float，double
-	- 字符串类型：char，varchar，
-	- 日期类型：data，time，datatime，timestamp
-	- 其他类型
+- 整形类型：int，bigint
+- 浮点类型：float，double
+- 字符串类型：char，varchar，
+- 日期类型：data，time，datatime，timestamp
+- 其他类型
 -----
 ## MYSQL常用命令
-	退出：mysql：exit;
-	查看mysql中有哪些数据库：show databases;
-	选择要使用的数据库：use 库名;
-	创建数据库：create database 库名;
-	查看数据库下有哪些表：show tables;
-	查询数据库的版本号：select version();
-	查询当前在哪个数据库：select database();
-	终止mysql的命令：\c
-	查询表中数据：select \* from 表名
-	查看表结构：desc 表名
+退出：mysql：			 exit;
+查看mysql中有哪些数据库：show databases;
+选择要使用的数据库：     use 库名;
+创建数据库：			 create database 库名;
+查看数据库下有哪些表：   show tables;
+查询数据库的版本号：     select version();
+查询当前在哪个数据库：   select database();
+终止mysql的命令：		 \c
+查询表中数据： 			 select \* from 表名
+查看表结构：		  	 desc 表名
 	
-	----
+-----
 ## SQL语句分类
 	DQL：数据查询语言（select）
 	DML：数据操作语言（insert，delete，update）针对数据
 	DDL：数据定义语言（create，drop，alter）针对表
 	TCL：事务控制语言（commit，rollback）
 	DCL：数据控制语言（grand，revoke）
-	
+-----
+ 
