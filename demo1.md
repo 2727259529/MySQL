@@ -120,7 +120,6 @@ select ename from emp where ename like '%T';
 select ename from emp where ename like 'K%';  
 找出第二个字每是A的？  
 select ename from emp where ename like '_A%';  
-		
 找出第三个字母是R的？  
 		select ename from emp where ename like '__R%';
 -----
@@ -128,7 +127,7 @@ select ename from emp where ename like '_A%';
 order by （默认是升序asc）  
 order by xxx desc（降序是desc）  
 sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会考虑启用ename排序。）   
-关键字顺序不能变：  
+```关键字顺序不能变：  
 		select  
 			...  
 		from  
@@ -143,7 +142,7 @@ sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会�
 			第二步：where  
 			第三步：select  
 			第四步：order by（排序总是在最后执行！）
-
+```
 
 
 
