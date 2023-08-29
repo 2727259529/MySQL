@@ -111,17 +111,15 @@ as关键字可以省略.
 select empno,ename,job from emp where job = 'MANAGER' or job = 'SALESMAN';  
 select empno,ename,job from emp where job in('MANAGER', 'SALESMAN');  
 注意：in不是一个区间。in后面跟的是具体的值
-[^具体用法]： %：匹配任意多个字符。下划线：任意一个字符。  
+[^具体用法]: %：匹配任意多个字符。下划线：任意一个字符。  
 找出名字中含有O的？ 
-		select ename from emp where ename like '%O%';  
+select ename from emp where ename like '%O%';  
 找出名字以T结尾的？  
-		select ename from emp where ename like '%T';  
-			
+select ename from emp where ename like '%T';  	
 找出名字以K开始的？  
-		select ename from emp where ename like 'K%';  
-
+select ename from emp where ename like 'K%';  
 找出第二个字每是A的？  
-		select ename from emp where ename like '_A%';  
+select ename from emp where ename like '_A%';  
 		
 找出第三个字母是R的？  
 		select ename from emp where ename like '__R%';
@@ -130,7 +128,7 @@ select empno,ename,job from emp where job in('MANAGER', 'SALESMAN');
 order by （默认是升序asc）  
 order by xxx desc（降序是desc）  
 sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会考虑启用ename排序。）   
-> 关键字顺序不能变：  
+关键字顺序不能变：  
 		select  
 			...  
 		from  
