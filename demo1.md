@@ -84,7 +84,7 @@ as关键字可以省略.
 		where   
 			条件;   
 ### 都有哪些条件？
-|q|w|
+|符号|作用|
 |:----|:----|
 |= |等于[^4]|
 |\<>或!=| 不等于|
@@ -93,19 +93,58 @@ as关键字可以省略.
 |> 大于|
 |>= |大于等于|
 |between … and …. |两个值之间, 等同于 >= and <=[^5]|
-
+|null|空[^6]|
+|is not null|不为空|
+|and|并且[^7]|
+|or|或者|
+|in|包含[^8]|
+|not in|不在这个范围中|
+|like|模糊查询[^具体用法]|
 [^4]: =一个字符串的时候要用单引号
 [^5]: 使用between and的时候，必须遵循左小右大。between and是闭区间，包括两端的值。
+[^6]: 在数据库当中null不能使用等号进行衡量。需要使用is null  
+因为数据库中的null代表什么也没有，它不是一个值，所以不能使用  
+等号衡量。
+[^7]: and和or同时出现，and优先级较高。如果想让or先执行，需要加“小括号”  
+以后在开发中，如果不确定优先级，就加小括号就行了。
+[^8]:in相当于多个or   
+select empno,ename,job from emp where job = 'MANAGER' or job = 'SALESMAN';  
+select empno,ename,job from emp where job in('MANAGER', 'SALESMAN');  
+注意：in不是一个区间。in后面跟的是具体的值
+[^具体用法]： %：匹配任意多个字符。下划线：任意一个字符。  
+找出名字中含有O的？ 
+		select ename from emp where ename like '%O%';  
+找出名字以T结尾的？  
+		select ename from emp where ename like '%T';  
+			
+找出名字以K开始的？  
+		select ename from emp where ename like 'K%';  
 
-
-
-
-
-
-
-
-
-
+找出第二个字每是A的？  
+		select ename from emp where ename like '_A%';  
+		
+找出第三个字母是R的？  
+		select ename from emp where ename like '__R%';
+-----
+## 排序
+order by （默认是升序asc）  
+order by xxx desc（降序是desc）  
+sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会考虑启用ename排序。）   
+> 关键字顺序不能变：  
+		select  
+			...  
+		from  
+			...  
+		where  
+			...  
+		order by  
+			...  
+		
+		以上语句的执行顺序必须掌握：  
+			第一步：from  
+			第二步：where  
+			第三步：select  
+			第四步：order by（排序总是在最后执行！）
 
 
 
