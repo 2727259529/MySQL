@@ -175,6 +175,67 @@ sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会�
 	select round(1236.567, 2) as result from emp;      保留2个小数  
 	select round(1236.567, -1) as result from emp;     保留到十位。 ``` 
 - rand() 生成随机数  select round(rand()\*100,0) from emp;  100以内的随机数
-
-
-
+- ifnull 可以将null转换成一个具体值
+```ifnull是空处理函数。专门处理空的。
+在所有数据库当中，只要有NULL参与的数学运算，最终结果就是NULL。
+NULL只要参与运算，最终结果一定是NULL。为了避免这个现象，需要使用ifnull函数。
+ifnull函数用法：ifnull(数据, 被当做哪个值)```
+### 分组函数（多行处理函数）
+多行处理函数的特点：输入多行，最终输出一行。
+|函数|作用|
+|:----:|:----:|
+|count|计数|
+|sum|求和|
+|avg|平均值|
+|max|最大值|
+|min|最小值|
+**注意：**
+	分组函数在使用的时候必须先进行分组，然后才能用。如果你没有对数据进行分组，整张表默认为一组。
+	分组函数自动忽略NULL，你不需要提前对NULL进行处理。
+	count(具体字段)：表示统计该字段下所有不为NULL的元素的总数。
+	count(\*)：统计表当中的总行数。（只要有一行数据count则++）因为每一行记录不可能都为NULL，一行数据中有一列不为NULL，则这行数据就是有效的。
+	分组函数不能够直接使用在where子句中。
+	所有的分组函数可以组合起来一起用。
+## 分组查询
+### 什么是分组查询？
+在实际的应用中，可能有这样的需求，需要先进行分组，然后对每一组的数据进行操作。
+```select
+			...
+		from
+			...
+		where
+			...
+		group by
+			...
+		order by
+			...
+		
+		以上关键字的顺序不能颠倒，需要记忆。
+		执行顺序是什么？
+			1. from
+			2. where
+			3. group by
+			4. select
+			5. order by
+		select sum(sal) from emp; 
+		这个没有分组，为啥sum()函数可以用呢？
+		因为select在group by之后执行。
+		
+		
+    使用having可以对分完组之后的数据进一步过滤。  
+	having不能单独使用，having不能代替where，having必须和group by联合使用。
+	
+	执行顺序？
+		1. from
+		2. where
+		3. group by
+		4. having
+		5. select
+		6. order by
+	
+	从某张表中查询数据，
+	先经过where条件筛选出有价值的数据。
+	对这些有价值的数据进行分组。
+	分组之后可以使用having继续筛选。
+	select查询出来。
+	最后排序输出！
