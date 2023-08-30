@@ -223,6 +223,7 @@ select
 	select查询出来。
 	最后排序输出！
 	```
+	
 ## 去重
 把查询结果去除重复记录【distinct】  
 select distinct job,deptno from emp;
