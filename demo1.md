@@ -171,16 +171,20 @@ sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会�
 - format 设置千分位
 - **case..when..then..when..then..else..end**
 - round 四舍五入  
-	```select round(1236.567, 0) as result from emp;   保留整数位。  
+	```
+	select round(1236.567, 0) as result from emp;   保留整数位。  
 	select round(1236.567, 1) as result from emp;      保留1个小数   
 	select round(1236.567, 2) as result from emp;      保留2个小数  
-	select round(1236.567, -1) as result from emp;     保留到十位。 ``` 
+	select round(1236.567, -1) as result from emp;     保留到十位。
+	``` 
 - rand() 生成随机数  select round(rand()\*100,0) from emp;  100以内的随机数
 - ifnull 可以将null转换成一个具体值
-```ifnull是空处理函数。专门处理空的。
+```
+ifnull是空处理函数。专门处理空的。
 在所有数据库当中，只要有NULL参与的数学运算，最终结果就是NULL。
 NULL只要参与运算，最终结果一定是NULL。为了避免这个现象，需要使用ifnull函数。
-ifnull函数用法：ifnull(数据, 被当做哪个值)```
+ifnull函数用法：ifnull(数据, 被当做哪个值)
+```
 ### 分组函数（多行处理函数）
 多行处理函数的特点：输入多行，最终输出一行。
 |函数|作用|
@@ -200,7 +204,8 @@ ifnull函数用法：ifnull(数据, 被当做哪个值)```
 ## 分组查询
 ### 什么是分组查询？
 在实际的应用中，可能有这样的需求，需要先进行分组，然后对每一组的数据进行操作。
-```select
+```
+select
 			...
 		from
 			...
@@ -239,4 +244,5 @@ ifnull函数用法：ifnull(数据, 被当做哪个值)```
 	对这些有价值的数据进行分组。
 	分组之后可以使用having继续筛选。
 	select查询出来。
-	最后排序输出！```
+	最后排序输出！
+	```
