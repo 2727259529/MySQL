@@ -148,6 +148,7 @@ sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会�
 - lower 转换小写   select lower(ename) as ename from emp;   
 - upper 转换大写   select upper(name) as name from t_student;
 - substr 取子串    substr 取子串（substr( 被截取的字符串, 起始下标,截取的长度)）
+```	
 	select substr(ename, 1, 1) as ename from emp;
 	注意：起始下标从1开始，没有0.
 	找出员工名字第一个字母是A的员工信息？
@@ -159,7 +160,8 @@ sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会�
 		from 
 			emp 
 		where 
-			substr(ename,1,1) = 'A';
+		substr(ename,1,1) = 'A';
+```
 - cancat函数进行字符串的拼接   select concat(empno,ename) from emp;
 - length 取长度   select length(ename) enamelength from emp;
 - trim 去空格    select \* from emp where ename = trim('   KING');
@@ -167,11 +169,11 @@ sal asc, ename asc;（sal在前，起主导，只有sal相等的时候，才会�
 - date_format 格式化日期
 - format 设置千分位
 - **case..when..then..when..then..else..end**
-- round 四舍五入
-	select round(1236.567, 0) as result from emp;   保留整数位。
-	select round(1236.567, 1) as result from emp;   保留1个小数
-	select round(1236.567, 2) as result from emp;   保留2个小数
-	select round(1236.567, -1) as result from emp;  保留到十位。
+- round 四舍五入  
+	```select round(1236.567, 0) as result from emp;   保留整数位。  
+	select round(1236.567, 1) as result from emp;      保留1个小数   
+	select round(1236.567, 2) as result from emp;      保留2个小数  
+	select round(1236.567, -1) as result from emp;     保留到十位。 ``` 
 - rand() 生成随机数  select round(rand()\*100,0) from emp;  100以内的随机数
 
 
